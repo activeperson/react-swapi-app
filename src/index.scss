@@ -1,0 +1,65 @@
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper-links{
+  display: flex;
+}
+/* .nav-link.active{
+  border-bottom: 1px solid #007bff;
+} */
+
+
+
+#root{
+  .small-window{
+    position: absolute;
+    width: 300px;
+    height: auto;
+    right: 0;
+    top: 0;
+    padding: 15px 0 15px 15px;
+    color: #ffffff;
+    background: #000000;
+  }
+  .wrapper-people{
+    li{
+      cursor: pointer;
+    }
+  }
+  .wrapper-links{
+    padding: 0;
+  }
+  .wrapper-app{
+    h1{
+      margin-bottom: 25px;
+    }
+  }
+  .wrapper-film{
+    img{
+      width: 100%;
+    }
+    .film-item{
+      margin-bottom: 25px;
+      padding-top: 25px;
+    }
+    .film-title{
+      padding: 10px 0;
+      text-align: center;
+      display: block;
+    }
+  }
+  .buttons{
+    button{
+      &:first-child{
+        margin-right: 15px;
+      }
+    }
+  }
+}
