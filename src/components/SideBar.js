@@ -5,10 +5,6 @@ import React, { useContext } from 'react';
 const SideBar = () => {
 
 
-    // const { theme, toggleTheme } = useContext(ThemeContext);
-// const { theme, toggleTheme } = useContext(ThemeContext);
-
-
 const styles = {
     li: {
         textAlign: 'center'
