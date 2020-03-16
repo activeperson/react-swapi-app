@@ -20,7 +20,6 @@ let StarShipsPage = () => {
             setLoading(false);
         })
     }, []);
-console.log(data);
     return (
         <>
             <h1>Page Starships</h1>

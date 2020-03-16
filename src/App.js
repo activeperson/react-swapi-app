@@ -10,8 +10,7 @@ import SinglePage from './components/SinglePage';
 import HelloWindow from './components/HelloWindow';
 import SideBar from './components/SideBar';
 
-let App = () => {
-
+let App = (props) => {
 
   let [popup, setPopup] = useState(false);
 

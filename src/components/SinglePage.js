@@ -30,7 +30,9 @@ const SinglePage = (props) => {
 
     const showPeoples = (e) => {
         (flag.active) ? setFlag({active: false}) : setFlag({active: true});
-        const requestsPeople = data.data.characters.map(url => fetch(url));
+        const requestsPeople = data.data.characters.map( url => fetch(url));
+
+
         Promise.all(requestsPeople).then(responses => Promise.all(responses.map(r => r.json()))).then(all => setPeople({people: all, loading: false}));
     }
     return (

@@ -32,8 +32,7 @@ let HomePage = () => {
         <Fragment>
             <h1>Home Page</h1>
             {data.loading ? (
-                <div className="spinner-border" role="status">
-                </div>
+                <div className="spinner-border" role="status"></div>
             ) : (
                     <div className="row">
                         <ul className="wrapper-people col-sm-4 list-group">
