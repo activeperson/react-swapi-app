@@ -17,8 +17,6 @@ let App = (props) => {
   let [popup, setPopup] = useState(false);
 
   document.body.className = `${localStorage.getItem('themeSettings')}`;
-console.log(props.theme);
-
 
   let showModal = () => {
     setTimeout(() => {
