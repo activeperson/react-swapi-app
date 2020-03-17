@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const SideBar = (props) => {
 
@@ -37,6 +37,10 @@ const styles = {
         </div>
     );
 
+}
+
+SideBar.propTypes = {
+    theme: PropTypes.object
 }
 
 

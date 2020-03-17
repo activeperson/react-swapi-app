@@ -1,7 +1,7 @@
 import React, { useEffect, Fragment, useState } from 'react';
 import { NavLink  } from 'react-router-dom'
 
-let PageFilms = (props) => {
+let PageFilms = () => {
 
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);

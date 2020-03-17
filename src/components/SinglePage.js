@@ -1,6 +1,5 @@
 import React, { useState, useEffect, Fragment } from 'react';
 
-
 const SinglePage = (props) => {
     const pageID = props.match.params.id;
     const [people, setPeople] = useState({people: [], loading: true});

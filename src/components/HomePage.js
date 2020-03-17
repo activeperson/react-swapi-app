@@ -2,7 +2,6 @@ import React, { useState, useEffect, Fragment } from 'react';
 import DetailInformation from '../components/DetailInformation';
 import ListItem from '../components/ListItem';
 let HomePage = () => {
-
     const [data, setData] = useState({ data: [], loading: true });
     const [singeData, setSingleData] = useState({dataW: [], idElem : false});
 

@@ -1,8 +1,8 @@
 import React from 'react';
 
-
 let DetailInformation = (props) => {
 const { data, id } = props;
+console.log(id);
 
 let styles = {
     img: {

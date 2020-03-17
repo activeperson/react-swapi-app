@@ -11,12 +11,13 @@ import HelloWindow from './components/HelloWindow';
 import SideBar from './components/SideBar';
 import { connect } from 'react-redux';
 import { setTheme } from './store/actions/actionTheme';
+import PropTypes from 'prop-types';
 
 let App = (props) => {
   let [popup, setPopup] = useState(false);
 
   document.body.className = `${localStorage.getItem('themeSettings')}`;
-
+console.log(props.theme);
 
 
   let showModal = () => {
@@ -46,6 +47,12 @@ let App = (props) => {
       {popup && <Modal showModal={showModal} />}
     </>
   );
+}
+
+
+App.propTypes = {
+  theme: PropTypes.object,
+  setThemeAction: PropTypes.func
 }
 
 const mapStateToProps = store => {

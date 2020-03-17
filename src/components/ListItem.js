@@ -1,5 +1,5 @@
 import React from 'react';
-
+import PropTypes from 'prop-types';
 
 const ListItem = (props) => {
     return(
@@ -9,5 +9,10 @@ const ListItem = (props) => {
     );
 }
 
+
+ListItem.propTypes = {
+    clickAction: PropTypes.func,
+    name: PropTypes.string
+}
 
 export default ListItem;
