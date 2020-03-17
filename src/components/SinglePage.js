@@ -24,7 +24,7 @@ const SinglePage = (props) => {
     }
 
     useEffect(() => {
-        let fetchFilms = fetch(`https://swapi.co/api/films/${pageID}`).then(response => response.json());
+        let fetchFilms = fetch(`https://swapi.co/api/films/${pageID}/`).then(response => response.json());
         fetchFilms.then(data => setData({ data, loading: false }));
     }, []);
 

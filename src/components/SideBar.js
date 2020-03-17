@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import ThemeContext from "../ThemeContext";
+import React from 'react';
 
 
 const SideBar = (props) => {

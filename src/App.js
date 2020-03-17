@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from 'react';
+import React, { useState, useEffect } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
@@ -10,17 +10,14 @@ import SinglePage from './components/SinglePage';
 import HelloWindow from './components/HelloWindow';
 import SideBar from './components/SideBar';
 import { connect } from 'react-redux';
-import { setTheme } from './actions/actionTheme';
+import { setTheme } from './store/actions/actionTheme';
 
 let App = (props) => {
   let [popup, setPopup] = useState(false);
 
-  const { theme } = props.theme;
-
-
   document.body.className = `${localStorage.getItem('themeSettings')}`;
 
-  
+
 
   let showModal = () => {
     setTimeout(() => {
@@ -33,26 +30,25 @@ let App = (props) => {
   }, []);
 
 
-  return(
+  return (
     <>
-        {localStorage.getItem('name') ? (<><HelloWindow /> <SideBar theme={props.theme} setTheme={props.setThemeAction} /></>) : ''}
-          <Header />
-          <div className="container wrapper-app">
-            <Switch>
-              <Route exact path='/' component={HomePage}/>
-              <Route exact path='/films' component={PageFilms}/>
-              <Route exact path='/films/:id' component={SinglePage}/>
-              <Route exact path='/starships' component={StarShipsPage}/>
-            </Switch>
-          </div>
+      {localStorage.getItem('name') ? (<><HelloWindow /> <SideBar theme={props.theme} setTheme={props.setThemeAction} /></>) : ''}
+      <Header />
+      <div className="container wrapper-app">
+        <Switch>
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/films' component={PageFilms} />
+          <Route exact path='/films/:id' component={SinglePage} />
+          <Route exact path='/starships' component={StarShipsPage} />
+        </Switch>
+      </div>
 
-        { popup && <Modal showModal={showModal} /> }
+      {popup && <Modal showModal={showModal} />}
     </>
   );
 }
 
 const mapStateToProps = store => {
-  console.log(store)
   return {
     theme: store.theme,
   }
@@ -60,7 +56,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setThemeAction: year => dispatch(setTheme(year)) 
+    setThemeAction: year => dispatch(setTheme(year))
   }
 }
 

@@ -18,7 +18,7 @@ let HomePage = () => {
     let handleClick = (e) => {
         const id = e.target.id;
         const allLi = [...e.target.parentNode.children];
-        const result = fetch(`https://swapi.co/api/people/${e.target.id}`).then(response  => response.json());
+        const result = fetch(`https://swapi.co/api/people/${e.target.id}/`).then(response  => response.json());
         result.then(data => setSingleData({dataW: data, idElem: id}));
         allLi.forEach((elem) => {
             elem.classList.remove('active');

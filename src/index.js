@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom';
-import ThemeContext, { themes } from './ThemeContext';
+// import ThemeContext from './ThemeContext';
 import { Provider } from 'react-redux'
 import { store } from './store/configureStore';
 
@@ -12,24 +12,11 @@ import { store } from './store/configureStore';
 
 function WrapperApp(){
 
-    const [theme, setTheme] = useState(themes.light);
-    // const toggleTheme = () => {
-    //     if (theme === themes.light){
-    //         setTheme(themes.dark);
-    //         localStorage.setItem('themeSettings', themes.dark.classes);
-    //     } else {
-    //         setTheme(themes.light);
-    //         localStorage.setItem('themeSettings', themes.light.classes);
-    //     }
-    // }
-
     return(
         <Provider store={store}>
-            <ThemeContext.Provider>
                 <BrowserRouter>
                     <App />
                 </BrowserRouter>
-            </ThemeContext.Provider>
         </Provider>
     );
 }
