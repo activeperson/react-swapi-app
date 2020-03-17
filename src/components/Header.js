@@ -3,9 +3,6 @@ import { NavLink } from 'react-router-dom'
 
 
 let Header = () => {
-
-
-
     return (
         <div className="wrapper-links container">
             <NavLink activeClassName='active' className="nav-link" to='/'>Home</NavLink>
