@@ -1,12 +1,19 @@
-import React, { useContext } from 'react';
+import React, { useState } from 'react';
 import ThemeContext from "../ThemeContext";
 
 
-const SideBar = () => {
+const SideBar = (props) => {
 
-
-
-const { toggleTheme } = useContext(ThemeContext)
+const onBtnClick = (e) => {
+    const { theme } = props.theme;
+    if(theme === 'white-theme'){
+        props.setTheme(e.target.id);
+        localStorage.setItem('themeSettings', e.target.id);
+    }else{
+        props.setTheme('white-theme');
+        localStorage.setItem('themeSettings', 'white-theme');
+    }
+}
 
 const styles = {
     li: {
@@ -25,7 +32,7 @@ const styles = {
             <ul className="list-group">
                 <li className="list-group-item"><h4>Theme settings</h4></li>
                 <li className="list-group-item buttons" style={styles.li}>
-                    <button type="button" onClick={toggleTheme} className="btn btn-light">Change theme color</button>
+                    <button type="button" id="black-theme" onClick={onBtnClick} className="btn btn-light">Change theme color</button>
                 </li>
             </ul>
         </div>

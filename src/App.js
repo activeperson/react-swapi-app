@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from './components/Header';
 import HomePage from './components/HomePage';
 import { Route, Switch } from 'react-router-dom'
@@ -10,10 +10,17 @@ import SinglePage from './components/SinglePage';
 import HelloWindow from './components/HelloWindow';
 import SideBar from './components/SideBar';
 import { connect } from 'react-redux';
-import { setYear } from './actions/PageActions';
+import { setTheme } from './actions/actionTheme';
 
 let App = (props) => {
   let [popup, setPopup] = useState(false);
+
+  const { theme } = props.theme;
+
+
+  document.body.className = `${localStorage.getItem('themeSettings')}`;
+
+  
 
   let showModal = () => {
     setTimeout(() => {
@@ -26,12 +33,9 @@ let App = (props) => {
   }, []);
 
 
-
   return(
     <>
-      <h1>Hello, {props.user.name}</h1>
-      {/* // <ThemeContext.Provider value={themes.dark}> */}
-        {localStorage.getItem('name') ? (<><HelloWindow /> <SideBar /></>) : ''}
+        {localStorage.getItem('name') ? (<><HelloWindow /> <SideBar theme={props.theme} setTheme={props.setThemeAction} /></>) : ''}
           <Header />
           <div className="container wrapper-app">
             <Switch>
@@ -43,7 +47,6 @@ let App = (props) => {
           </div>
 
         { popup && <Modal showModal={showModal} /> }
-      {/* // </ThemeContext.Provider> */}
     </>
   );
 }
@@ -51,14 +54,13 @@ let App = (props) => {
 const mapStateToProps = store => {
   console.log(store)
   return {
-    user: store.user,
-    page: store.page
+    theme: store.theme,
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    setYearAction: year => dispatch(setYear(year)) // [1]
+    setThemeAction: year => dispatch(setTheme(year)) 
   }
 }
 

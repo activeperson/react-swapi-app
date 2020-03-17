@@ -21,7 +21,6 @@ let HomePage = () => {
         const result = fetch(`https://swapi.co/api/people/${e.target.id}`).then(response  => response.json());
         result.then(data => setSingleData({dataW: data, idElem: id}));
         allLi.forEach((elem) => {
-            console.log(elem);
             elem.classList.remove('active');
         });
         e.target.classList.add('active');

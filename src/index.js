@@ -11,21 +11,21 @@ import { store } from './store/configureStore';
 
 
 function WrapperApp(){
+
     const [theme, setTheme] = useState(themes.light);
-    const toggleTheme = () => {
-        if(theme === themes.light){
-            setTheme(themes.dark);
-            localStorage.setItem('themeSettings', themes.dark.classes);
-        }else{
-            setTheme(themes.light);
-            localStorage.setItem('themeSettings', themes.light.classes);
-        }
-    }
-    document.body.className = `${localStorage.getItem('themeSettings')}`;
+    // const toggleTheme = () => {
+    //     if (theme === themes.light){
+    //         setTheme(themes.dark);
+    //         localStorage.setItem('themeSettings', themes.dark.classes);
+    //     } else {
+    //         setTheme(themes.light);
+    //         localStorage.setItem('themeSettings', themes.light.classes);
+    //     }
+    // }
 
     return(
         <Provider store={store}>
-            <ThemeContext.Provider value={{toggleTheme}}>
+            <ThemeContext.Provider>
                 <BrowserRouter>
                     <App />
                 </BrowserRouter>
