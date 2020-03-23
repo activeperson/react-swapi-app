@@ -16,16 +16,17 @@ import PropTypes from 'prop-types';
 let App = (props) => {
   let [popup, setPopup] = useState(false);
 
-  document.body.className = `${localStorage.getItem('themeSettings')}`;
-
+console.log(props.theme);
   let showModal = () => {
     setTimeout(() => {
       setPopup(true);
     }, 4000)
   }
+  // document.body.className = `${(props.theme) ? 'white-theme' : 'dark-theme'}`;
 
   useEffect(() => {
     showModal();
+
   }, []);
 
 
@@ -61,7 +62,7 @@ const mapStateToProps = store => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    setThemeAction: year => dispatch(setTheme(year))
+    setThemeAction: theme => dispatch(setTheme(theme))
   }
 }
 

@@ -2,16 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const SideBar = (props) => {
-
 const onBtnClick = (e) => {
-    const { theme } = props.theme;
-    if(theme === 'white-theme'){
-        props.setTheme(e.target.id);
-        localStorage.setItem('themeSettings', e.target.id);
-    }else{
-        props.setTheme('white-theme');
-        localStorage.setItem('themeSettings', 'white-theme');
-    }
+    props.setTheme(false);
+    // document.body.className = `${localStorage.getItem('themeSettings')}`;
+    // console.log(theme);
+
+
 }
 
 const styles = {
