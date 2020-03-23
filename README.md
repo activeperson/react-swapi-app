@@ -1,1 +1,2 @@
-Hello world!#@#
+npm i
+npm start
